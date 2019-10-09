@@ -1,0 +1,18 @@
+.root {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #141414;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+/*# sourceMappingURL=Toolbar.module.css.map */

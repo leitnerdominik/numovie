@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,KAAK,CAAC;EACJ,UAAU,EAAE,IAAI;EAChB,SAAS,EAAE,MAAM;EACjB,OAAO,EAAE,QAAQ;CAClB;;AAED,AAAA,KAAK,CAAC;EACJ,KAAK,EAAE,IAAI;EACX,eAAe,EAAE,IAAI;CAMtB;;AARD,AAIE,KAJG,AAIF,MAAM,CAAC;EACN,KAAK,EAAE,IAAI;EACX,UAAU,EAAE,GAAG;CAChB",
+    "sources": [
+        "NavigationItem.module.scss"
+    ],
+    "names": [],
+    "file": "NavigationItem.module.css"
+}

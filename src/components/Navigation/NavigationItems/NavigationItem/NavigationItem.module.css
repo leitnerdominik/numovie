@@ -1,0 +1,17 @@
+.root {
+  list-style: none;
+  font-size: 1.2rem;
+  padding: 5px 10px;
+}
+
+.link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+/*# sourceMappingURL=NavigationItem.module.css.map */
