@@ -1,0 +1,11 @@
+.root {
+  margin: 5px;
+  cursor: pointer;
+}
+
+.progressBar {
+  border: 2px solid black;
+  text-align: center;
+  background: #000;
+}
+/*# sourceMappingURL=Paper.module.css.map */
