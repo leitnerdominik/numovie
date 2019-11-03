@@ -10,11 +10,10 @@ class SearchBox extends Component {
 
   textChangeHandler = e => {
     this.setState({text: e.target.value})
-    console.log(e.key);
     
     if(e.key === 'Enter') {
       console.log('enter!');
-      
+      // TODO: Searching...
     }
   }
 

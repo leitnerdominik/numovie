@@ -1,0 +1,26 @@
+.links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  list-style: none;
+  color: #00a8ff;
+}
+
+.links li {
+  margin: 0 5px;
+}
+
+.links a {
+  color: #00a8ff;
+  text-decoration: none;
+}
+
+.links a:hover {
+  -webkit-transition: .4s;
+  transition: .4s;
+  opacity: .6;
+}
+/*# sourceMappingURL=SubNav.module.css.map */

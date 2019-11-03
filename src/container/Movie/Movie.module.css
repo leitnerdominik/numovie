@@ -16,4 +16,18 @@
       flex-wrap: wrap;
   margin: 20px;
 }
-/*# sourceMappingURL=PaperContainer.module.css.map */
+
+.title {
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0;
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.nothing {
+  color: #fff;
+  font-size: 1.8rem;
+  margin: 0 auto;
+}
+/*# sourceMappingURL=Movie.module.css.map */

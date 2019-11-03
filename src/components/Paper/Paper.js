@@ -13,7 +13,7 @@ const paper = ({ movie, clicked }) => {
   return (
     <div className={classes.root} onClick={() => clicked(movie.id)}>
       <img
-        src={`${process.env.REACT_APP_IMAGE_URL}${movie.poster_path}`}
+        src={`${process.env.REACT_APP_IMAGE_URL}w185${movie.poster_path}`}
         alt="img"
       />
       <div className={classes.progressBar}>

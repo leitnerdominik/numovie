@@ -6,12 +6,25 @@ import SearchBox from '../../SearchBox/SearchBox';
 
 import classes from './Toolbar.module.css';
 
+const navItems = [
+  {
+    label: 'Movies',
+    path: '/',
+    id: 1,
+  },
+  {
+    label: 'Series',
+    path: '/series',
+    id: 2,
+  },
+];
+
 const toolbar = () => {
   return (
     <div className={classes.root}>
       <div className={classes.nav}>
         <Logo />
-        <NavigationItems />
+        <NavigationItems navItems={navItems} />
       </div>
       <SearchBox />
     </div>

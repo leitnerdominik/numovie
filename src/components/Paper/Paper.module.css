@@ -3,6 +3,16 @@
   cursor: pointer;
 }
 
+.root img {
+  border: 3px solid transparent;
+}
+
+.root img:hover {
+  border-color: #631014;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
 .progressBar {
   border: 2px solid black;
   text-align: center;

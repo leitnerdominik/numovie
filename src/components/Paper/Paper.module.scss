@@ -1,6 +1,15 @@
 .root {
   margin: 5px;
   cursor: pointer;
+
+  img {
+    border: 3px solid transparent;
+
+    &:hover {
+      border-color: #631014;
+      transition: 0.4s;
+    }
+  }
 }
 
 .progressBar {

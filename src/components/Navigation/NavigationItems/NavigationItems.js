@@ -4,25 +4,7 @@ import NavigationItem from './NavigationItem/NavigationItem';
 
 import classes from './NavigationItems.module.css';
 
-const navItems = [
-  {
-    label: 'Home',
-    path: '/',
-    id: 1,
-  },
-  {
-    label: 'Series',
-    path: '/series',
-    id: 2,
-  },
-  {
-    label: 'Movies',
-    path: '/movies',
-    id: 3,
-  },
-];
-
-const navigationItems = () => {
+const navigationItems = ({navItems}) => {
   const items = navItems.map(item => (
     <NavigationItem key={item.id} path={item.path}>
       {item.label}
