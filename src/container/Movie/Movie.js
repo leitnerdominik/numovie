@@ -83,12 +83,12 @@ class Movie extends Component {
   };
 
   getMovieData = () => {
-    const { onFetchMovies } = this.props;
+    const { onFetchMovies, type } = this.props;
     const { currentPage } = this.state;
     const chart = this.getChart();
     this.setChartId();
 
-    onFetchMovies('movie', chart, currentPage);
+    onFetchMovies(type, chart, currentPage);
 
     // const { REACT_APP_API_URL, REACT_APP_API_KEY } = process.env;
 
