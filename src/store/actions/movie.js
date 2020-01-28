@@ -86,33 +86,3 @@ export const fetchMovieDetails = (id, type) => {
     }
   }
 }
-
-const searchMovieStart = () => {
-  return {
-    type: actionTypes.SEARCH_MOVIE_START
-  }
-}
-
-const searchMovieSuccess = movies => {
-  return {
-    type: actionTypes.SEARCH_MOVIE_SUCCESS,
-    payload: {
-      movies,
-    }
-  }
-}
-
-const searchMovieFail = error => {
-  return {
-    type: actionTypes.SEARCH_MOVIE_FAIL,
-    payload: {
-      error,
-    }
-  }
-}
-
-export const searchMovie = (type, searchTerm) => {
-  return async dispatch => {
-
-  }
-}

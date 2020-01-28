@@ -1,21 +1,27 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+
+import * as action from '../../store/actions/index';
 
 import classes from './SearchBox.module.css';
 
 class SearchBox extends Component {
   state = {
     active: false,
-    text: ''
+    text: '',
   };
 
   textChangeHandler = e => {
-    this.setState({text: e.target.value})
-    
-    if(e.key === 'Enter') {
-      console.log('enter!');
-      // TODO: Searching...
+    this.setState({ text: e.target.value });
+  };
+
+  submitHandler = e => {
+    if (e.key === 'Enter') {
+      this.props.onSearchSubmit(this.state.text);
+      this.props.history.push(`search/${this.state.text}`);
     }
-  }
+  };
 
   toggleClasses = () => {
     this.setState(prevState => ({
@@ -38,6 +44,7 @@ class SearchBox extends Component {
             className={classes.searchTxt}
             placeholder="Search a movie..."
             onChange={this.textChangeHandler}
+            onKeyDown={this.submitHandler}
           />
           <span className={classes.searchBtn} onClick={this.toggleClasses}>
             <svg
@@ -56,4 +63,8 @@ class SearchBox extends Component {
   }
 }
 
-export default SearchBox;
+const mapDispatchToProps = dispatch => ({
+  onSearchSubmit: searchTerm => dispatch(action.searchMovie(searchTerm))
+});
+
+export default connect(null, mapDispatchToProps)(withRouter(SearchBox));

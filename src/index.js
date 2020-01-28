@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore, compose, applyMiddleware } from 'redux';
+import { createStore, compose, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 
 import './index.css';
@@ -9,6 +9,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 import movieReducer from './store/reducers/movie';
+import searchReducer from './store/reducers/search';
 
 require('dotenv').config();
 
@@ -17,8 +18,13 @@ const composeEnhancers =
     ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
     : null || compose;
 
+const rootReducer = combineReducers({
+  movie: movieReducer,
+  search: searchReducer,
+});
+
 const store = createStore(
-  movieReducer,
+  rootReducer,
   composeEnhancers(applyMiddleware(thunk))
 );
 

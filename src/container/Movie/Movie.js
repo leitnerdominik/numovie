@@ -183,12 +183,12 @@ Movie.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  movies: state.movies,
-  currentMovie: state.currentMovie,
-  loading: state.loading,
+  movies: state.movie.movies,
+  currentMovie: state.movie.currentMovie,
+  loading: state.movie.loading,
   error: state.error,
-  currentPage: state.currentPage,
-  totalPages: state.totalPages,
+  currentPage: state.movie.currentPage,
+  totalPages: state.movie.totalPages,
 });
 
 const mapDispatchToProps = dispatch => ({
