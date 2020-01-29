@@ -3,11 +3,15 @@ import classes from './MovieDetails.module.css';
 
 const movieDetails = ({ movie }) => {
   const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
-  const genres = movie.genres
-    .map(genre => {
-      return <span key={genre.id}>{genre.name}</span>;
-    })
-    .reduce((prev, curr) => [prev, ' | ', curr]);
+
+  let genres = 'No genres found';
+  if (movie.genres && movie.genres.length > 0) {
+    genres = movie.genres
+      .map(genre => {
+        return <span key={genre.id}>{genre.name}</span>;
+      })
+      .reduce((prev, curr) => [prev, ' | ', curr]);
+  }
   return (
     <div>
       {movie.backdrop_path && (

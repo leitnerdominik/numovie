@@ -16,4 +16,10 @@
       flex-wrap: wrap;
   margin: 20px;
 }
+
+.title {
+  color: #fff;
+  text-align: center;
+  text-decoration: underline;
+}
 /*# sourceMappingURL=search.module.css.map */

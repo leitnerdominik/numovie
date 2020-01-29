@@ -19,7 +19,7 @@ class SearchBox extends Component {
   submitHandler = e => {
     if (e.key === 'Enter') {
       this.props.onSearchSubmit(this.state.text);
-      this.props.history.push(`search/${this.state.text}`);
+      this.props.history.push(`search/movie/${this.state.text}`);
     }
   };
 

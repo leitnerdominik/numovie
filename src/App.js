@@ -13,7 +13,7 @@ function App() {
         <Route exact path="/series" component={Series} />
         <Route path="/series/charts/:chart" component={Series} />
         <Route path="/charts/:chart" component={Movies} />
-        <Route path="/search/:query" component={Search} />
+        <Route path="/search/:type/:query" component={Search} />
         <Route exact path="/" component={Movies} />
       </Switch>
     </BrowserRouter>
