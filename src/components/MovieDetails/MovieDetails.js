@@ -23,11 +23,13 @@ const movieDetails = ({ movie }) => {
         </div>
       )}
       <div className={classes.details}>
-        <img
-          className={classes.cover}
-          src={`${process.env.REACT_APP_IMAGE_URL}w185${movie.poster_path}`}
-          alt="cover"
-        />
+        {movie.poster_path && (
+          <img
+            className={classes.cover}
+            src={`${process.env.REACT_APP_IMAGE_URL}w185${movie.poster_path}`}
+            alt="cover"
+          />
+        )}
         <div>
           <h3 className={classes.title}>{movie.title}</h3>
           <p>

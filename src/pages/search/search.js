@@ -21,12 +21,12 @@ class Search extends Component {
       subNav: [
         {
           id: 1,
-          path: '/search/movies/',
+          path: '/search/movie/',
           label: 'Movies',
         },
         {
           id: 2,
-          path: '/search/series/',
+          path: '/search/serie/',
           label: 'Series',
         },
       ]
@@ -38,8 +38,8 @@ class Search extends Component {
     if (query) {
       this.props.onSearch(query);
       const updateSubNav = [...this.state.subNav];
-      updateSubNav[0].path = `/search/movies/${query}`;
-      updateSubNav[1].path = `/search/series/${query}`;
+      updateSubNav[0].path = `/search/movie/${query}`;
+      updateSubNav[1].path = `/search/serie/${query}`;
       this.setState({
         subNav: updateSubNav,
       })
@@ -53,7 +53,11 @@ class Search extends Component {
   };
 
   findMovieById = id => {
-    const { type } = this.props.match.params;
+    let { type } = this.props.match.params;
+
+    if(type === 'serie') {
+      type = 'tv';
+    }
 
     this.props.onFetchMovieDetails(id, type);
     this.toggleModal();
@@ -74,11 +78,11 @@ class Search extends Component {
 
     if (searchLoading) {
       moviesGrid = <Spinner />;
-    } else if (movies && type === 'movies') {
+    } else if (movies && type === 'movie') {
       moviesGrid = movies.results.map(movie => (
         <Paper clicked={this.findMovieById} key={movie.id} movie={movie} />
       ));
-    } else if(series && type === 'series') {
+    } else if(series && type === 'serie') {
       moviesGrid = series.results.map(serie => (
         <Paper clicked={this.findMovieById} key={serie.id} movie={serie} />
       ));
