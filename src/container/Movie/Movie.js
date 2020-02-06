@@ -89,43 +89,12 @@ class Movie extends Component {
     this.setChartId();
 
     onFetchMovies(type, chart, currentPage);
-
-    // const { REACT_APP_API_URL, REACT_APP_API_KEY } = process.env;
-
-    // let url = `${REACT_APP_API_URL}movie/${chart}?api_key=${REACT_APP_API_KEY}&page=${this.state.currentPage}`;
-    // if (type === 'tv') {
-    //   url = `${REACT_APP_API_URL}tv/${chart}?api_key=${REACT_APP_API_KEY}&page=${this.state.currentPage}`;
-    // }
-
-    // try {
-    //   const resJson = await fetch(url);
-    //   const res = await resJson.json();
-    //   console.log('result: ', res);
-    //   this.setState({
-    //     movies: res.results,
-    //     chartSelected: currentId,
-    //     totalPages: res.total_pages,
-    //   });
-    // } catch (err) {
-    //   console.log(err);
-    // }
   };
 
   findMovie = id => {
     const { type, onFetchMovieDetails } = this.props;
 
     onFetchMovieDetails(id, type);
-    // this.setState({ loading: true });
-    // try {
-    //   const res = await fetch(
-    //     `${process.env.REACT_APP_API_URL}${type}/${id}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
-    //   );
-    //   const currMovie = await res.json();
-    //   this.setState({ currentMovie: currMovie, loading: false });
-    // } catch (err) {
-    //   console.log(err);
-    //   this.setState({ loading: false });
-    // }
     this.toggleModal();
   };
 

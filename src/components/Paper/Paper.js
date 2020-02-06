@@ -22,9 +22,12 @@ const paper = ({ movie, clicked }) => {
     movieImg = noVid;
   }
 
+  let movieName = movie.original_title;
+  if(movie.original_name) movieName = movie.original_name;
+
   return (
     <div className={classes.root} onClick={() => clicked(movie.id)}>
-      <h3>{movie.original_title}</h3>
+      <h3>{movieName.length > 30 ? movieName.slice(0, 30) + '...' : movieName}</h3>
       <img src={movieImg} alt="movie cover" />
       <div className={classes.progressBar}>
         <div
