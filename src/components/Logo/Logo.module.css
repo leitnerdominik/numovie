@@ -3,9 +3,13 @@
 }
 
 .title {
-  color: #e50914;
   font-size: 1.5rem;
   font-weight: 700;
   margin: 0;
+}
+
+.title a {
+  color: #e50914;
+  text-decoration: none;
 }
 /*# sourceMappingURL=Logo.module.css.map */

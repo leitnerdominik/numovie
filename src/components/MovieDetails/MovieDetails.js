@@ -12,6 +12,27 @@ const movieDetails = ({ movie }) => {
       })
       .reduce((prev, curr) => [prev, ' | ', curr]);
   }
+  let releaseDate = null;
+  let runTime = null;
+
+  if (movie.release_date) {
+    releaseDate = new Date(movie.release_date).toLocaleDateString(
+      'en-US',
+      dateOptions
+    );
+  } else if (movie.first_air_date) {
+    releaseDate = new Date(movie.first_air_date).toLocaleDateString(
+      'en-US',
+      dateOptions
+    );
+  }
+
+  if(movie.runtime) {
+    runTime = movie.runtime + ' Minutes';
+  } else if(movie.episode_run_time[0]) {
+    runTime = movie.episode_run_time[0] + ' Minutes';
+  }
+
   return (
     <div>
       {movie.backdrop_path && (
@@ -31,13 +52,9 @@ const movieDetails = ({ movie }) => {
           />
         )}
         <div>
-          <h3 className={classes.title}>{movie.title}</h3>
+          <h3 className={classes.title}>{movie.title || movie.name}</h3>
           <p>
-            {new Date(movie.release_date).toLocaleDateString(
-              'en-US',
-              dateOptions
-            )}{' '}
-            | {movie.runtime + ' Minutes'}
+            {releaseDate} | {runTime}
           </p>
           <p>{genres}</p>
           <p>{movie.overview}</p>

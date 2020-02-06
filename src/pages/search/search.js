@@ -18,6 +18,7 @@ class Search extends Component {
 
     this.state = {
       open: false,
+      activeChartId: 1,
       subNav: [
         {
           id: 1,
@@ -29,12 +30,25 @@ class Search extends Component {
           path: '/search/serie/',
           label: 'Series',
         },
-      ]
+      ],
     };
+  }
+
+  componentDidUpdate() {
+    const { type } = this.props.match.params;
+    let chartId = 1;
+    if (type === 'serie') {
+      chartId = 2;
+    }
+
+    if (chartId !== this.state.activeChartId) {
+      this.setState({ activeChartId: chartId });
+    }
   }
 
   UNSAFE_componentWillMount() {
     const { query } = this.props.match.params;
+
     if (query) {
       this.props.onSearch(query);
       const updateSubNav = [...this.state.subNav];
@@ -42,7 +56,7 @@ class Search extends Component {
       updateSubNav[1].path = `/search/serie/${query}`;
       this.setState({
         subNav: updateSubNav,
-      })
+      });
     }
   }
 
@@ -55,7 +69,7 @@ class Search extends Component {
   findMovieById = id => {
     let { type } = this.props.match.params;
 
-    if(type === 'serie') {
+    if (type === 'serie') {
       type = 'tv';
     }
 
@@ -72,7 +86,7 @@ class Search extends Component {
       currentMovie,
     } = this.props;
     const { type } = this.props.match.params;
-    const { open } = this.state;
+    const { open, activeChartId } = this.state;
 
     let moviesGrid = [];
 
@@ -82,7 +96,7 @@ class Search extends Component {
       moviesGrid = movies.results.map(movie => (
         <Paper clicked={this.findMovieById} key={movie.id} movie={movie} />
       ));
-    } else if(series && type === 'serie') {
+    } else if (series && type === 'serie') {
       moviesGrid = series.results.map(serie => (
         <Paper clicked={this.findMovieById} key={serie.id} movie={serie} />
       ));
@@ -91,11 +105,17 @@ class Search extends Component {
     return (
       <Layout>
         <div>
-          <h1 className={classes.title}>{type === 'movies' ? 'Movies' : 'Series' }</h1>
-          <SubNav items={this.state.subNav} />
+          <h1 className={classes.title}>
+            {type === 'movies' ? 'Movies' : 'Series'}
+          </h1>
+          <SubNav items={this.state.subNav} activeId={activeChartId} />
           {open ? (
             <Modal close={this.toggleModal}>
-              {movieLoading ? <Spinner /> : <MovieDetails movie={currentMovie} />}
+              {movieLoading ? (
+                <Spinner />
+              ) : (
+                <MovieDetails movie={currentMovie} />
+              )}
             </Modal>
           ) : null}
           <div className={classes.flex}>
