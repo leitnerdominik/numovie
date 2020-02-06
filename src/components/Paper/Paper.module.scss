@@ -1,0 +1,35 @@
+.root {
+  margin: 5px;
+  cursor: pointer;
+  width: 185px;
+  height: 375px;
+
+  h3 {
+    overflow-wrap: break-word;
+    color: #fff;
+    margin: 0;
+    text-align: center;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  img {
+    border: 3px solid transparent;
+    width: 185px;
+    height: 275px;
+    object-fit: cover;
+
+    &:hover {
+      border-color: #631014;
+      transition: 0.4s;
+    }
+  }
+}
+
+.progressBar {
+  border: 2px solid black;
+  text-align: center;
+  background: #000;
+}

@@ -1,0 +1,64 @@
+.root {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.searchBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: #141414;
+  height: 50px;
+  border-radius: 40px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.active .searchTxt {
+  width: 240px;
+  padding: 0 6px;
+}
+
+.active .searchBtn {
+  background: #fff;
+}
+
+.searchBtn {
+  float: right;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #2f3640;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.searchTxt {
+  border: none;
+  background: none;
+  outline: none;
+  float: left;
+  padding: 0;
+  color: white;
+  font-size: 16px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  line-height: 40px;
+  width: 0px;
+}
+/*# sourceMappingURL=SearchBox.module.css.map */

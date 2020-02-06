@@ -1,0 +1,33 @@
+.root {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: #141414;
+  color: #fff;
+  z-index: 200;
+}
+
+.close {
+  position: absolute;
+  fill: #fff;
+  background: rgba(0, 0, 0, 0.4);
+  top: 0;
+  right: 0;
+  height: 50px;
+  width: 50px;
+  border: none;
+  border-radius: 50%;
+  margin: 5px;
+  padding: 0;
+}
+
+.close:hover {
+  cursor: pointer;
+}
+
+.close:focus {
+  outline: none;
+}
+/*# sourceMappingURL=Modal.module.css.map */
